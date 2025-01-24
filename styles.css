@@ -5,40 +5,169 @@
     box-sizing: border-box;
 }
 
+/* Body settings */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #000; /* Black background */
+    color: #f4f4f4; /* Off-white text */
     text-align: center;
-    padding: 20px;
+    padding: 0;
+    min-height: 100vh; /* Full-height body */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items from top */
+    align-items: center;
 }
 
+/* Header with medium gray banner */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+    width: 100%;
+    background-color: #221b1b; /* Dark gray banner */
+    color: #f4f4f4; /* Off-white text */
+    padding: 20px 0;
 }
 
-h1 {
+/* Styling for the <h1> tag */
+header h1 {
     font-size: 2.5rem;
-    margin-bottom: 10px;
+    margin: 0;
 }
 
+/* Ensure that links inside the header are off-white and not underlined */
+header a {
+    color: #f4f4f4;  /* Off-white text color */
+    text-decoration: none;  /* Remove underline */
+}
+
+/* Optional: Change the color when hovering over the link */
+header a:hover {
+    color: #fff;  /* White text color on hover */
+    text-decoration: underline;  /* Optional underline effect on hover */
+}
+
+/* Main section settings */
 main {
-    margin-top: 50px;
+    margin-top: 30px;
+    text-align: center;
+    width: 80%;
+    flex-grow: 1; /* This will make sure that the main content grows and pushes the footer down */
 }
 
-p {
+/* Resetting styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Carousel container */
+ul.carousel {
+    display: flex; /* Align items side by side */
+    justify-content: space-evenly; /* Space between items */
+    overflow: hidden; /* Hide anything out of bounds */
+    padding: 0;
+    list-style: none;
+    transition: transform 0.5s ease; /* Smooth transition */
+}
+
+/* List items inside carousel */
+ul.carousel li {
+    display: flex;  /* Align inner paragraphs horizontally */
+    width: max-content; /* Allow items to grow horizontally */
+}
+
+/* Paragraphs and their links */
+ul.carousel li p {
+    padding: 0 15px;
     font-size: 1.2rem;
-    color: #555;
 }
 
+/* Style links */
+ul.carousel li a {
+    color: #f4f4f4;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+}
+
+ul.carousel li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Rotation animation on hover */
+ul.carousel:hover {
+    transform: rotate(10deg);
+}
+
+/* DESIGN and GEARS box */
+.designer-box {
+    background-color: #333; /* Darker background for box */
+    color: #ccc; /* Lighter gray text for contrast */
+    padding: 40px 20px;
+    width: 60%;
+    margin: 20px 0;
+}
+
+.designer-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* Text links box with projects */
+.projects-box {
+    display: flex;
+    justify-content: space-between; /* Spaced-out links */
+    width: 80%;
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+/* Larger font for the links and project items */
+.projects-box a {
+    color: #f4f4f4; /* Off-white text color */
+    font-size: 2rem;  /* Larger text */
+    text-decoration: none; /* Removes underline */
+    padding: 15px 25px;
+    border: 2px solid #f4f4f4;  /* Slightly thicker border */
+    margin: 0 20px;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out; /* Transition with ease-in-out */
+    border-radius: 8px;  /* Rounded corners */
+}
+
+/* Remove all default link styles (visited, active, focus, etc.) */
+.projects-box a:link,
+.projects-box a:visited,
+.projects-box a:active,
+.projects-box a:focus {
+    text-decoration: none; /* No underline */
+    color: inherit; /* Inherit color from parent */
+    outline: none; /* Prevents focus outline */
+}
+
+/* Advanced Hover Effect for links */
+.projects-box a:hover {
+    background-color: #f4f4f4; /* Light background */
+    color: #333;  /* Darker color for contrast */
+    border-color: #333;  /* Dark border color */
+    transform: scale(1.2) rotate(5deg); /* Larger and tilted effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);  /* Add shadow effect */
+}
+
+/* Footer (same dark style as header) */
 footer {
     background-color: #333;
     color: #fff;
     padding: 10px;
     margin-top: 50px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
 }
 
 footer p {
