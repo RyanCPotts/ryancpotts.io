@@ -4,74 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="purpose" content="general information">
     <meta name="author" content="Ryan C. Potts">
-    <title>Ryan Charles Potts</title>
+    <title>TagCloud Example</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
     <style>
-        /* Here are the styles for the tagSphere */
-        #tagSphere {
-            position: relative; 
+        #tagCloud {
             margin: 40px auto;
-            width: 500px;  
+            width: 500px;
             height: 500px;
             display: flex;
             justify-content: center;
             align-items: center;
+            border-radius: 50%;
+            background-color: #252121;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1><a href="https://www.ryancpotts.io">ryancpotts.io</a></h1>
+        <h1>TagCloud Example</h1>
     </header>
-
     <main>
-        <p>FULL STACK SOFTWARE ENGINEER</p>
-        <p>design meets gears</p>
-        <div id="tagSphere"></div> <!-- Here is the div for the cloud --> 
+        <div id="tagCloud"></div>
     </main>
-
     <footer>
-        <p>&copy; 2025 Ryan C. Potts.</p>
-        <p>All rights reserved.</p>
+        <p>&copy; 2025 Ryan C. Potts. All rights reserved.</p>
     </footer>
 
-    <!-- External Library -->
-    <script src="https://cdn.jsdelivr.net/npm/tagcloud@2.2.0/dist/tagcloud.min.js" defer></script>
+    <!-- TagCloud Library -->
+    <script src="https://cdn.jsdelivr.net/npm/tagcloud@2.2.0/dist/tagcloud.min.js" onload="initializeTagCloud()"></script>
 
-    <!-- Main Script -->
+    <!-- Initialize TagCloud -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Wait until the TagCloud script is fully loaded
-            const tagScript = document.querySelector('script[src="https://cdn.jsdelivr.net/npm/tagcloud@2.2.0/dist/tagcloud.min.js"]');
-            
-            // Check if the TagCloud script is loaded
-            if (tagScript && typeof TagCloud === 'function') {
-                const texts = [
-                    'React', 'Node.js', 'Python', 
-                    'JavaScript', 'TypeScript', 
-                    'MongoDB', 'Docker', 
-                    'AWS', 'GraphQL', 
-                    'HTML', 'CSS'
-                ];
+        function initializeTagCloud() {
+            console.log("TagCloud library loaded:", typeof TagCloud === "function");
 
-                const options = {
-                    radius: 200,
-                    maxSpeed: 'fast',
-                    initSpeed: 'fast',
-                    direction: 135,
-                    keep: true
-                };
+            const tagCloudContainer = document.getElementById('tagCloud');
+            const texts = [
+                'React', 'Node.js', 'Python', 
+                'JavaScript', 'TypeScript', 
+                'MongoDB', 'Docker', 
+                'AWS', 'GraphQL', 
+                'HTML', 'CSS'
+            ];
+            const options = {
+                radius: 200,
+                maxSpeed: 'fast',
+                initSpeed: 'fast',
+                direction: 135,
+                keep: true
+            };
 
-                // Initialize the tag cloud
-                TagCloud('#tagSphere', texts, options);
+            if (typeof TagCloud === 'function') {
+                TagCloud(tagCloudContainer, texts, options);
             } else {
                 console.error("TagCloud library is not loaded correctly.");
             }
-        });
+        }
     </script>
 </body>
 </html>
