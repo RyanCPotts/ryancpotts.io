@@ -10,6 +10,8 @@ body {
   /* Header styles */
   header {
     background-color: #1a1a1a; /* Dark gray banner box */
+    border-style: ridge;
+    border-color: rgb(107, 95, 79);
     padding: 30px;
     text-align: center;
   }
