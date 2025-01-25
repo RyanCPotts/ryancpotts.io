@@ -44,7 +44,7 @@ header a {
 /* Optional: Change the color when hovering over the link */
 header a:hover {
     color: #fff;  /* White text color on hover */
-    text-decoration: underline;  /* Optional underline effect on hover */
+    text-decoration: none;  /* Optional underline effect on hover */
 }
 
 /* Main section settings */
@@ -62,50 +62,10 @@ main {
     box-sizing: border-box;
 }
 
-/* Carousel container */
-ul.carousel {
-    display: flex; /* Align items side by side */
-    justify-content: space-evenly; /* Space between items */
-    overflow: hidden; /* Hide anything out of bounds */
-    padding: 0;
-    list-style: none;
-    transition: transform 0.5s ease; /* Smooth transition */
-}
-
-/* List items inside carousel */
-ul.carousel li {
-    display: flex;  /* Align inner paragraphs horizontally */
-    width: max-content; /* Allow items to grow horizontally */
-}
-
-/* Paragraphs and their links */
-ul.carousel li p {
-    padding: 0 15px;
-    font-size: 1.2rem;
-}
-
-/* Style links */
-ul.carousel li a {
-    color: #f4f4f4;
-    text-decoration: none;
-    padding: 10px;
-    display: inline-block;
-}
-
-ul.carousel li a:hover {
-    color: #fff;
-    text-decoration: underline;
-}
-
-/* Rotation animation on hover */
-ul.carousel:hover {
-    transform: rotate(10deg);
-}
-
 /* DESIGN and GEARS box */
 .designer-box {
-    background-color: #333; /* Darker background for box */
-    color: #ccc; /* Lighter gray text for contrast */
+    background-color: #320505; /* Darker background for box */
+    color: #b3acac; /* Lighter gray text for contrast */
     padding: 40px 20px;
     width: 60%;
     margin: 20px 0;
@@ -143,19 +103,18 @@ ul.carousel:hover {
 .projects-box a:visited,
 .projects-box a:active,
 .projects-box a:focus {
-    text-decoration: none; /* No underline */
-    color: inherit; /* Inherit color from parent */
-    outline: none; /* Prevents focus outline */
+    outline: 2px solid #fff;  /* Providing a visible outline */
 }
 
 /* Advanced Hover Effect for links */
 .projects-box a:hover {
     background-color: #f4f4f4; /* Light background */
     color: #333;  /* Darker color for contrast */
-    border-color: #333;  /* Dark border color */
+    border-color: #141111;  /* Dark border color */
     transform: scale(1.2) rotate(5deg); /* Larger and tilted effect */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);  /* Add shadow effect */
 }
+
 
 /* Footer (same dark style as header) */
 footer {
@@ -164,7 +123,7 @@ footer {
     padding: 10px;
     margin-top: 50px;
     width: 100%;
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     text-align: center;
