@@ -1,69 +1,88 @@
 /* Base styles */
 body {
-    margin: 0;
-    padding: 10px;
-    background-color: black; /* Solid black background */
-    font-family: 'Roboto', sans-serif;
-    color: #f5f5f5; /* Off-white text color */
-  }
+  margin-left: 20px;
+  padding: 10px;
+  background-color: rgb(12, 12, 12); /* Solid black background */
+  font-family: 'Roboto', sans-serif;
+  color: #f5f5f5; /* Off-white text color */
+}
+
+/* Header styles */
+/* Header styles */
+header {
+  background-color: #1a1a1a; /* Dark gray banner box */
+  border-style: ridge;
+  border-color: rgb(107, 95, 79);
+  padding: 30px;
+  text-align: center; /* Center text */
+  display: flex;
+  flex-direction: column; /* Stack h2 above h1 */
+  align-items: center; /* Center them horizontally */
+  justify-content: center; /* Center them vertically (in case of additional height) */
+  height: 100vh; /* Optional: makes the header take full screen height */
+}
+
+/* Subtitle styles */
+/* Subtitle styles */
+h2 {
+  display: block; /* Ensure it's a block element */
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2.0rem;
+  color: bisque; 
+  padding: 10px;
+}
+
+header h1 {
+  display: block; /* Corrected the 'display' value */
+  font-size: 5rem; /* Increase the font size */
+  color: #f0f0f0; /* Off-white text color */
+  letter-spacing: 2.0rem; /* Add spacing between the letters */
+  margin: 0; /* Remove extra margin */
+  font-family: 'Roboto', sans-serif; /* Choose a clean, readable font */
+}
+
+
+
+/* Main content styles */
+main {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+/* TagCloud container styles */
+.tag-cloud {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg) rotateY(-30deg);
+  perspective: 1000px;
+  animation: rotate 20s infinite linear;
   
-  /* Header styles */
-  header {
-    background-color: #1a1a1a; /* Dark gray banner box */
-    border-style: ridge;
-    border-color: rgb(107, 95, 79);
-    padding: 30px;
-    text-align: center;
-  }
-  
-  header h1 {
-    font-size: 3rem; /* Increase the font size */
-    color: #f0f0f0; /* Off-white text color */
-    letter-spacing: 0.5rem; /* Add spacing between the letters */
-    margin: 0; /* Remove extra margin */
-    
-    font-family: 'Roboto', sans-serif; /* Choose a clean, readable font */
-  }
-  
-  /* Subtitle styles */
-  h2 {
-    text-align: center;
-    margin: 20px 0;
-    font-size: 1.0rem;
-    color: #f5f5f5; /* Off-white text color */
-  }
-  
-  /* Main content styles */
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 80vh;
-  }
-  
-  /* TagCloud container styles */
-  #tagCloud {
-    margin: 40px auto;
-    width: 500px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: #252121; /* Darker gray for contrast */
-  }
-  
-  /* Footer styles */
-  footer {
-    background-color: #333;
-    text-align: center;
-    padding: 20px 0; /* More padding for better balance */
-  }
-  
-  footer p {
-    margin: 0;
-    font-size: 0.75rem;
-  }
-  
-  
+}
+
+.tag {
+  position: absolute;
+  font-size: 25px;  /* Default size */
+  opacity: 0.8;
+  transition: transform cubic-bezier(0.55, 0.085, 0.68, 0.53), font-size 1s, opacity 1s;
+  transform-origin: center;
+  text-align: center;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  text-align: center;
+  bottom: 0; /* Assuming you want to place the footer at the bottom of the page */
+  position: fixed; /* Ensure footer stays at the bottom */
+  width: 100%; /* Make sure the footer spans the entire width */
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.75rem;
+}

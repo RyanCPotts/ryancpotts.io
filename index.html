@@ -4,114 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="Ryan C. Potts">
     <title>ryancpotts.io</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="tagcloud.min.js"></script>  <!-- External TagCloud library -->
+</head>
+
+
+<body>
+    
+    <header>
+        <h2>FULL STACK SOFTWARE ENGINEER</h2>
+        <h1>ryancpotts.io</h1>
+    </header>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
     <style>
-        /* Container for Tag Cloud */
-        #tagCloud {
-            position: relative; /* Control the position of child elements */
-            width: 100%;
-            height: 500px; /* Set fixed height */
-            margin: 40px auto;
-            background-color: #252121;
+        body {
+            
             display: flex;
-            flex-wrap: wrap;
+            position: relative;
             justify-content: center;
             align-items: center;
-            border-radius: 10px;
-            overflow: hidden; /* Ensures tags won't overflow from the container */
-            pointer-events: none; /* Tags don't block mouse events */
+            height: 100vh;
+            margin: 20px;
+            padding-left: 8cap;
         }
-
-        /* Tag Styling */
-        .tag {
-            font-family: 'Roboto', sans-serif;
-            margin: 10px;
-            font-size: 20px;
-            color: white;
-            cursor: pointer;
-            opacity: 0.7;
-            transition: opacity 0.3s, transform 0.3s;
-            position: absolute;
-            pointer-events: all;
-            will-change: transform, opacity;
-            z-index: 1; /* Ensure tags are clickable */
-        }
-
-        .tag:hover {
-            opacity: 1;
-            transform: scale(1.1);
-        }
-
-        /* Mouse hover and animation */
-        @keyframes cloudHover {
-            0% { transform: translate(0, 0); }
-            50% { transform: translate(10px, -10px); }
-            100% { transform: translate(0, 0); }
+        img {
+            width: auto;
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>ryancpotts.io</h1>
-    </header>
-    <h2>FULL STACK SOFTWARE ENGINEER</h2>
-    <main>
-        <div id="tagCloud"></div>
-    </main>
+
+<!-- <body>
+    <img src="/assets/Screenshot 2025-01-25 131935.png" alt="QR Code">
+</body> -->
+</html>
+    
+    <!-- The container where your tag cloud will appear -->
+    <div id="tagCloud"></div> 
+    
     <footer>
         <p>&copy; 2025 Ryan C. Potts</p>
         <p>All rights reserved</p>
     </footer>
 
-    <!-- Custom Tag Cloud JavaScript -->
-    <script>
-        window.onload = function () {
-            const tagCloudContainer = document.getElementById('tagCloud');
-            
-            // Replace with your actual repo names or dynamically fetch from your GitHub
-            const repos = [
-                'React', 'Node.js', 'Python', 'JavaScript', 'TypeScript',
-                'MongoDB', 'Docker', 'AWS', 'GraphQL', 'HTML', 'CSS'
-            ];
-            
-            // Create tags for each repo
-            repos.forEach((repoName, index) => {
-                const tag = document.createElement('div');
-                tag.classList.add('tag');
-                tag.innerText = repoName;
-                
-                // Assign random positions within the container
-                const maxWidth = tagCloudContainer.clientWidth;
-                const maxHeight = tagCloudContainer.clientHeight;
-
-                tag.style.left = `${Math.random() * maxWidth}px`;
-                tag.style.top = `${Math.random() * maxHeight}px`;
-
-                // Animation for each tag's movement
-                tag.style.animation = `cloudHover ${Math.random() * 3 + 3}s ease-in-out infinite`;
-
-                // Adding a click listener to redirect to the corresponding GitHub page
-                tag.addEventListener('click', () => {
-                    window.open(`https://github.com/ryancpotts/${repoName.toLowerCase().replace(" ", "-")}`, "_blank");
-                });
-
-                // Append the tag element to the cloud
-                tagCloudContainer.appendChild(tag);
-            });
-
-            // Mouse tracking for floating effect
-            tagCloudContainer.addEventListener('mousemove', (e) => {
-                const x = (e.pageX / window.innerWidth) * 30 - 15; // Adjusting tilt effect
-                const y = (e.pageY / window.innerHeight) * 30 - 15;
-                
-                const tags = document.querySelectorAll('.tag');
-                tags.forEach(tag => {
-                    tag.style.transform = `translate(${x}px, ${y}px)`;
-                });
-            });
-        };
-    </script>
+    <!-- Your custom script to manage dynamic behavior -->
+    <script src="App.js"></script>  <!-- JS logic for fetching and displaying repos -->
 </body>
 </html>
