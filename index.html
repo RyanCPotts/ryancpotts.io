@@ -6,50 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>ryancpotts.io</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Container for Tag Cloud */
-        #tagCloud {
-            position: relative; /* Control the position of child elements */
-            width: 100%;
-            height: 500px; /* Set fixed height */
-            margin: 40px auto;
-            background-color: #252121;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10px;
-            overflow: hidden; /* Ensures tags won't overflow from the container */
-            pointer-events: none; /* Tags don't block mouse events */
-        }
-
-        /* Tag Styling */
-        .tag {
-            font-family: 'Roboto', sans-serif;
-            margin: 10px;
-            font-size: 20px;
-            color: white;
-            cursor: pointer;
-            opacity: 0.7;
-            transition: opacity 0.3s, transform 0.3s;
-            position: absolute;
-            pointer-events: all;
-            will-change: transform, opacity;
-            z-index: 1; /* Ensure tags are clickable */
-        }
-
-        .tag:hover {
-            opacity: 1;
-            transform: scale(1.1);
-        }
-
-        /* Mouse hover and animation */
-        @keyframes cloudHover {
-            0% { transform: translate(0, 0); }
-            50% { transform: translate(10px, -10px); }
-            100% { transform: translate(0, 0); }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -64,7 +20,8 @@
         <p>All rights reserved</p>
     </footer>
 
-    <!-- Your custom script to manage dynamic behavior -->
-    <script src="App.js"></script>  <!-- JS logic for fetching and displaying repos -->
+    <!-- Custom Tag Cloud JavaScript -->
+    <script src="tagcloud.min.js"></script>
+    <script src="App.js"></script>
 </body>
 </html>
