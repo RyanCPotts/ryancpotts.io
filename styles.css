@@ -16,12 +16,12 @@ header {
   border-color: rgb(107, 95, 79);
   padding: 20px;
   text-align: center;
+  font-size: large;
 }
 
 header h1 {
-  font-size: 2rem;
   color: #f0f0f0;
-  letter-spacing: 0.5rem;
+  letter-spacing: 2rem;
   margin: 0;
 }
 
@@ -46,6 +46,7 @@ main {
   position: relative;
   width: 100%;
   height: 100%;
+  color: bisque;
   background-color: #252121;
   display: flex;
   justify-content: center;
@@ -55,7 +56,7 @@ main {
   pointer-events: none;
 }
 
-.tag {
+/* .tag {
   position: absolute;
   padding: 10px 20px;
   background-color: #3498db;
@@ -65,7 +66,7 @@ main {
   transition: transform 0.2s;
   font-size: 16px;
   pointer-events: all;
-}
+} */
 
 .tag:hover {
   transform: scale(1.2);
