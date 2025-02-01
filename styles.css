@@ -33,13 +33,15 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #f5f5f5;
+  color: #f5f5f5; /* Ensure the color remains the same */
   text-decoration: none;
   font-size: 1rem;
+  transition: transform 0.2s; /* Add transition for smooth scaling */
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+  font-size: 1.5rem;
+  /* transform: scale(3); Scale the link on hover */
 }
 
 header {
@@ -61,7 +63,7 @@ header h1 {
 h2 {
   text-align: center;
   font-size: 1.5rem;
-  color: #89cdf1;
+  color: #5cbff4;
   padding: 15px;
 }
 
@@ -104,7 +106,7 @@ main {
 }
 
 .tag:hover {
-  transform: scale(1.2);
+  transform: scale(1.8);
 }
 
 @keyframes tagAnimation {
