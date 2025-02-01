@@ -97,13 +97,23 @@ main {
   color: bisque;
   border-radius: 50%;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.2s, font-size 0.2s;
   font-size: 16px;
   pointer-events: all;
+  animation: tagAnimation 10s infinite;
 }
 
 .tag:hover {
   transform: scale(1.2);
+}
+
+@keyframes tagAnimation {
+  0%, 100% {
+    font-size: 16px;
+  }
+  50% {
+    font-size: 24px;
+  }
 }
 
 footer {
