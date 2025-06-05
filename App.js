@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }));
 
             // Initialize TagCloud with fetched repository names
-            const tagCloud = new TagCloud(tagCloudContainer, myTags.map(tag => tag.name), {
+            new TagCloud(tagCloudContainer, myTags.map(tag => tag.name), {
                 // options
                 radius: 300,
                 maxSpeed: 'fast',
