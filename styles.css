@@ -71,16 +71,18 @@ header h1 {
   font-weight: 700;
   margin: 2rem 0;
   color: bisque;
-  letter-spacing: 8px;
-  text-transform: uppercase;
-  width: 100%;
+  letter-spacing: 2rem;
+  text-transform: lowercase;
+  width: 100vw;
   text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 2rem auto;
+  margin: 2rem 0;
   padding: 0 2rem;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 header h1::before,
